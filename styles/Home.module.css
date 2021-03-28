@@ -22,10 +22,10 @@
   width: 500px;
   transition: 0.2s;
   border-radius: 5px;
-  max-width: calc(100vw - 50px);
+  max-width: calc(100vw - 100px);
 }
 
 .post:hover .mainImage {
-  width: 490px;
+  width: 390px;
   transition: 0.2s;
 }

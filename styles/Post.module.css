@@ -9,8 +9,19 @@
 }
 
 .body p {
-  font-size: 24px;
+  font-size: 20px;
   text-indent: 50px;
   line-height: 43px;
   text-align: justify;
+}
+
+@media (max-width: 690px) {
+  .body p {
+    font-size: 18px;
+    line-height: 35px;
+  }
+
+  .mainImage h1 {
+    font-size: 15px;
+  }
 }
