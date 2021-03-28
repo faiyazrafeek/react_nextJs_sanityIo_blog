@@ -12,7 +12,7 @@
 .post {
   margin: 25px;
   width: 500px;
-  height: 316px;
+  margin-bottom: 40px;
   cursor: pointer;
   text-align: center;
   max-width: calc(100vw - 50px);
@@ -22,10 +22,10 @@
   width: 500px;
   transition: 0.2s;
   border-radius: 5px;
-  max-width: calc(100vw - 100px);
+  max-width: calc(100vw - 50px);
 }
 
 .post:hover .mainImage {
-  width: 390px;
+  width: 490px;
   transition: 0.2s;
 }

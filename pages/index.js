@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 import { useState, useEffect } from 'react';
 import {useRouter} from 'next/router'
+import { Footer } from '../components/footer';
 
 export default function Home({ posts }) {
   const router = useRouter()
@@ -31,6 +32,10 @@ export default function Home({ posts }) {
 
   return (    
     <div>
+      <Head>
+        <title>FA Blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Toolbar/>
       <div className={styles.main}>
         <h1>Welcome to my Blog</h1>
@@ -48,6 +53,7 @@ export default function Home({ posts }) {
           
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

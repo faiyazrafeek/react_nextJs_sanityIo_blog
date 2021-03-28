@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 import styles from '../../styles/Post.module.css'
 import BlockContent from '@sanity/block-content-to-react'
 import { Toolbar } from '../../components/toolBar';
+import { Footer } from '../../components/footer';
+import Head from 'next/head';
+
 
 export const Post = ({title, body, image}) => {
     const [imageUrl, setImageUrl] = useState('')
+
 
     useEffect(() => {
         const imgBuilder = imageUrlBuilder({
@@ -18,20 +22,27 @@ export const Post = ({title, body, image}) => {
 
     return (
         <div>
+            <Head>
+                <title>FA Blog | { title }</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Toolbar/>
             <div className={styles.main}>
                 
                 <h1>{title}</h1>
 
                 {imageUrl && <img src={imageUrl} className={styles.mainImage} />}
-
+               
                 <div className={styles.body}>
                     <BlockContent blocks={body}/>
                 </div>
-            </div>
+            </div>           
+            <Footer/>
         </div>
-    );
+    );    
 }
+
+
 
 export const getServerSideProps = async pageContext => {
     const pageSlug =pageContext.query.slug;
@@ -59,8 +70,10 @@ export const getServerSideProps = async pageContext => {
                 title: post.title,
                 body: post.body,
                 image: post.mainImage
+                
             }
         }
+        
     }
 
 };
